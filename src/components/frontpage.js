@@ -23,7 +23,7 @@ function Frontpage() {
             <div className="hero-wrapper dark">
                 <div className="hero-content">
                     <h1>Kjør på!</h1>
-                    <p>snuus er reklamefri og gratis å bruke, og jeg bryr meg ikke noe om hvem du er. 🤷‍♀️</p>
+                    <p>snuus er reklamefri og gratis å bruke, og jeg bryr meg ikke om hvem du er. 🤷‍♀️</p>
                     <Link to="/login">logg inn</Link>
                     <Link to="/signup">lag bruker</Link>
                 </div>
