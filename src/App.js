@@ -1,6 +1,5 @@
 import React from 'react'
 import { Router } from "@reach/router"
-
 import './App.css';
 
 import Frontpage from "./components/frontpage"
@@ -9,7 +8,7 @@ import Signup from "./components/signup"
 import User from "./components/user"
 import NotFound from "./components/notfound"
 
-const App = () => {
+const App = () => {  
   return (
     <Router>
       <Frontpage path="/" />
