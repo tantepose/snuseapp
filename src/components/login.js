@@ -8,7 +8,8 @@ class Login extends Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            message: 'Logg inn! 👋'
         };
     
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -48,15 +49,17 @@ class Login extends Component {
           }).then((user) => {
               console.log("user logged in!")
               navigate('/user');
-          }).catch((e) => console.error(e))    
-
+            }).catch((e) => {
+                console.error(e)
+                this.setState({message: "Ånei: " + e.message + " 😿"});
+              })    
     }
     
     render () { 
         return (
             <div className="hero-wrapper dark">
                 <div className="hero-content">
-                    <p>Logg inn! 👋</p>
+                    <p>{this.state.message}</p>
 
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" name="username" placeholder="brukernavn" value={this.state.username} onChange={this.handleUsernameChange} />

@@ -8,7 +8,8 @@ class Signup extends Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            message: 'Lag en bruker! 👋'
         };
     
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -51,8 +52,10 @@ class Signup extends Component {
           }).then((user) => {
               console.log("user account created!")
               navigate('/user');              
-          }).catch((e) => console.error(e))    
-
+          }).catch((e) => {
+            console.error(e)
+            this.setState({message: "Ånei: " + e.message + " 😿"});
+          })
     }
     
 
@@ -63,11 +66,11 @@ class Signup extends Component {
         return (
             <div className="hero-wrapper dark">
                 <div className="hero-content">
-                    <p>Lag en bruker! 👋</p>
+                    <p>{this.state.message}</p>
 
                     <form onSubmit={this.handleSubmit}>
-                        <input type="text" name="username" placeholder="brukernavn" value={this.state.username} onChange={this.handleUsernameChange} />
-                        <input type="text" name="password" placeholder="passord" value={this.state.password} onChange={this.handlePasswordChange} />
+                        <input type="text" name="username" placeholder="(brukernavn)" value={this.state.username} onChange={this.handleUsernameChange} />
+                        <input type="text" name="password" placeholder="(passord)" value={this.state.password} onChange={this.handlePasswordChange} />
                         <input type="submit" value="OK" />
                     </form>
 

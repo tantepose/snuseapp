@@ -3,7 +3,10 @@ import { Link } from "@reach/router"
 
 function NotFound () {
     return (
-        <p>Oh no, 404!</p>
+        <div>
+            <p>Oh no, 404!</p>
+            <Link to="/">home</Link>
+        </div>
     );
 }
 
